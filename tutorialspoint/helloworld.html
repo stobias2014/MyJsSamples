@@ -4,41 +4,25 @@
 	<title>Javascript Tutorial</title> 
       <script type = "text/javascript">
          <!--
-            function Warn() {
-               alert("This is a warning message.");
-            }
+         	function setPrice(price) {
+         		this.price = price;
+         	}
 
-            function getConfirmation() {
-            	var retVal = confirm("Do you want to continue?");
-            	if(retVal == true) {
-            		document.write("User wants to continue.");
-            	} else {
-            		document.write("User does not want to continue.");
-            	}
-            }
-
-            function getValue() {
-            	var retVal = prompt("Enter you name: ", "your name here");
-            	document.write("You have entered " + retVal);
+            function book(title, author) {
+            	this.title = title;
+            	this.author = author;
+            	this.setPrice = setPrice;
             }
          //-->
       </script>      
-   </head>
-   
+</head>
    <body>     
-      <form name = "warnform" action = "">
-         <p> click the following button and see the result:</p>
-         <input type = "button" value = "Warn" onclick = "Warn()"/>
-      </form>
-
-      <p>Click for confirmation</p>
-      <form name="confirmform">
-      		<input type="button" value="Confirm" onclick="getConfirmation()">
-      </form>      
-
-      <p>Click for prompt</p>
-      <form>
-      	<input type="button" value="Prompt" onclick="getValue()">
-      </form>
+      <script type="text/javascript">
+      	var myBook = new book("Title", "Author");
+      	myBook.setPrice(10);
+      	document.write("Title: " + myBook.title + "<br/>");
+      	document.write("Author: " + myBook.author + "<br/>");
+      	document.write("Price: " + myBook.price + "<br/>");
+      </script>
    </body>
 </html>
