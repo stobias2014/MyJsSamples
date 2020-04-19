@@ -1,88 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript Tutorial</title>
+	<title>Javascript Tutorial</title> 
+      <script type = "text/javascript">
+         <!--
+            function Warn() {
+               alert("This is a warning message.");
+            }
 
-	<script type="text/javascript">
-		function sayHello() {
-			alert("Hello World!")
-		}
-	</script>
-</head>
-<body onload = "checkscope();">
-	<script type="text/javascript">
-		var a = 45;
-		var b = 10;
-		var c = "Test";
-		var linebreak = "<br/>"
+            function getConfirmation() {
+            	var retVal = confirm("Do you want to continue?");
+            	if(retVal == true) {
+            		document.write("User wants to continue.");
+            	} else {
+            		document.write("User does not want to continue.");
+            	}
+            }
 
-		document.write("a + b = ");
-		result = a + b;
-		document.write(result);
-		document.write(linebreak);
+            function getValue() {
+            	var retVal = prompt("Enter you name: ", "your name here");
+            	document.write("You have entered " + retVal);
+            }
+         //-->
+      </script>      
+   </head>
+   
+   <body>     
+      <form name = "warnform" action = "">
+         <p> click the following button and see the result:</p>
+         <input type = "button" value = "Warn" onclick = "Warn()"/>
+      </form>
 
-		document.write("a - b = ");
-		result = a - b;
-		document.write(result);
-		document.write(linebreak);
+      <p>Click for confirmation</p>
+      <form name="confirmform">
+      		<input type="button" value="Confirm" onclick="getConfirmation()">
+      </form>      
 
-		document.write("a * b = ");
-		result = a * b;
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a / b = ");
-		result = a / b;
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a % b = ");
-		result = a % b;
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a + b + c = ");
-		result = a + b + c;
-		document.write(result);
-		document.write(linebreak);
-
-		b = --b;
-		document.write("--b = ");
-		result = --b;
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a > b = ");
-		result = (a > b);
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a < b = ");
-		result = (a < b);
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a == b = ");
-		result = (a == b);
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a != b ");
-		result = (a != b);
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a >= b ");
-		result = (a >= b);
-		document.write(result);
-		document.write(linebreak);
-
-		document.write("a <= b ");
-		result = (a <= b);
-		document.write(result);
-		document.write(linebreak);
-
-
-	</script>
-</body>
+      <p>Click for prompt</p>
+      <form>
+      	<input type="button" value="Prompt" onclick="getValue()">
+      </form>
+   </body>
 </html>
